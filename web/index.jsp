@@ -23,7 +23,7 @@
               <a href="course"><button class="btn btn-info">查询所有所有课程</button></a>
           </div>
           <div class="btn-group">
-              <a href="userinfo"><button class="btn btn-info">查询个人信息</button></a>
+              <a href="userinfo?ID=<%=request.getSession().getAttribute("id")%>"><button class="btn btn-info">查询个人信息</button></a>
           </div>
       </div>
     </div>

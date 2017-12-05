@@ -24,10 +24,10 @@ public class UserinfoServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DB db = DB.getInstance();
-//        String ID = request.getSession().getAttribute("id");
-        Student student = db.selectSingleStudent("aaa");
-        Map<Integer, Course> characterMap = db.selectsingleCourse("aaa");
-        Map<Integer,Interest> interestMap = db.selectsingleInterset("aaa");
+        String ID = request.getParameter("ID").toString();
+        Student student = db.selectSingleStudent(ID);
+        Map<Integer, Course> characterMap = db.selectsingleCourse(ID);
+        Map<Integer,Interest> interestMap = db.selectsingleInterset(ID);
         String rs = new String();
         rs += student.getId()+" "
                 +student.getName()+" "
